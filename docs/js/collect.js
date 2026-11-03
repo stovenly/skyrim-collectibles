@@ -66,7 +66,8 @@ async function evidence(e, ctx) {
     return !!q && e.stages.some(s => q.done.has(s));
   }
   if (e.word) return save.changeForms.has(fid(e.word));
-  if (e.wall) return !!ctx.vm?.get(fid(e.wall), e.script)?.['::wordLearned_var'];
+  // A used wall's trigger keeps its changed form flags after the script instance is gone.
+  if (e.wall) return !!ctx.vm?.get(fid(e.wall), e.script)?.['::wordLearned_var'] || !!(save.changeForms.get(fid(e.wall))?.flags & 1);
   return false;
 }
 
@@ -98,30 +99,18 @@ export async function evaluate(save, data) {
     }
   }
   pool(ctx, items, data, state);
-  walls(ctx, items, data, state, extra);
+  walls(ctx, items, data, state);
 
   const wordsKnown = data.shouts.filter(s => ctx.dlc[s.dlc]).flatMap(s => s.words).filter(w => save.changeForms.has(ctx.fid(w))).length;
   return { ctx, items, state, extra, wordsKnown };
 }
 
-// The save does not always hold a wall's script state, so walls without it are judged from the shout's words known
-// minus the words its quests gave.
-function walls(ctx, items, data, state, extra) {
-  for (const s of data.shouts.filter(x => ctx.dlc[x.dlc])) {
-    const group = items.filter(i => i.shout === s.id);
-    const ws = group.filter(i => i.source === 'wall');
-    if (!ws.length) continue;
-    const known = s.words.filter(w => ctx.save.changeForms.has(ctx.fid(w))).length;
-    const taught = group.filter(i => i.source === 'quest' && state.get(i.id) === 'found').length;
-    const used = Math.min(ws.length, Math.max(0, known - taught));
-    const open = ws.filter(i => state.get(i.id) !== 'found');
-    const unknown = used - (ws.length - open.length);
-    if (unknown <= 0) continue;
-    if (unknown >= open.length) {
-      for (const i of open) { state.set(i.id, 'found'); extra.set(i.id, "Your save shows you have learned every word this shout's walls teach."); }
-      continue;
+// WordWallTrigger02Script walls leave nothing in the save, but they teach their shout's first word and no other source does.
+function walls(ctx, items, data, state) {
+  for (const s of data.shouts.filter(x => ctx.dlc[x.dlc] && ctx.save.changeForms.has(ctx.fid(x.words[0])))) {
+    for (const i of items) {
+      if (i.shout === s.id && i.source === 'wall' && i.rule[0].script === 'WordWallTrigger02Script') state.set(i.id, 'found');
     }
-    for (const i of open) extra.set(i.id, `You have learned ${unknown} more ${unknown === 1 ? 'word' : 'words'} of this shout from walls, but your save does not record which walls.`);
   }
 }
 

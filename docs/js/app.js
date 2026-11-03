@@ -29,7 +29,27 @@ const el = (tag, { dataset, ...props } = {}, ...kids) => {
   return e;
 };
 const icon = kind => el('img', { className: 'icon', src: asset(`img/${kind}.png`), alt: '', draggable: false });
-const dlcIcon = dlc => (dlc === 'base' ? null : el('img', { className: 'dlc', src: asset(`img/${dlc}.png`), alt: DLC_NAMES[dlc], title: DLC_NAMES[dlc], draggable: false }));
+const dlcIcon = dlc => (dlc === 'base' ? null : el('img', { className: 'dlc', src: asset(`img/${dlc}.png`), alt: DLC_NAMES[dlc], dataset: { dlc }, draggable: false }));
+const DLC_ABOUT = {
+  dawnguard: 'Official add-on about the war between vampires and the Dawnguard.',
+  dragonborn: 'Official add-on set on the island of Solstheim.',
+  saints: 'Creation Club pack included with the Anniversary Edition.',
+};
+const dlcTip = el('div', { className: 'dlc-tip', hidden: true });
+document.body.append(dlcTip);
+document.addEventListener('pointerover', e => {
+  const icon = e.target.closest?.('img.dlc');
+  dlcTip.hidden = !icon;
+  if (!icon) return;
+  const { dlc } = icon.dataset;
+  dlcTip.replaceChildren(el('img', { src: icon.src, alt: '' }),
+    el('div', {}, el('b', { textContent: DLC_NAMES[dlc] }), el('p', { textContent: DLC_ABOUT[dlc] })));
+  const r = icon.getBoundingClientRect();
+  const x = Math.max(8, Math.min(r.left, innerWidth - dlcTip.offsetWidth - 8));
+  const above = r.top - dlcTip.offsetHeight - 8;
+  dlcTip.style.left = `${x}px`;
+  dlcTip.style.top = `${above > 8 ? above : r.bottom + 8}px`;
+});
 
 const state = {
   data: null,
@@ -199,14 +219,6 @@ function renderWalker(game) {
   if (!a) return;
   const r = state.result;
   const found = r.items.filter(i => i.kind === 'artifact' && st(i) === 'found');
-  const has = name => found.some(i => i.name === name);
-  const notes = [];
-  if (has("Savior's Hide") && has('Ring of Hircine')) {
-    notes.push('Savior\'s Hide and the uncursed Ring of Hircine both counted, so Hircine\'s quest added two.');
-  }
-  if (state.save.header.edition === 'le' && r.ctx.dlc.dawnguard && has('Masque of Clavicus Vile')) {
-    notes.push("On the 2011 edition with Dawnguard, the Masque of Clavicus Vile never counts: Dawnguard's copy of A Daedra's Best Friend lost its link to the achievement. Skyrim Special Edition and VR fixed it.");
-  }
   const done = a.count >= a.max;
   const close = el('button', { type: 'button', className: 'pop-close', ariaLabel: 'Close', textContent: '×', onclick: () => box.close() });
   box.append(
@@ -214,8 +226,10 @@ function renderWalker(game) {
       el('span', { className: 'walker-state', textContent: done ? 'Achievement earned' : `${a.max - a.count} to go` }), close),
     el('div', { className: 'walker-num', innerHTML: `${a.count}<small> / ${a.max} counted by the game</small>` }),
     el('div', { className: 'bar' }, el('i', { style: `width:${Math.min(1, a.count / a.max) * 100}%` })),
-    el('p', { className: 'walker-sub', textContent: `You have collected ${found.length} of the ${r.items.filter(i => i.kind === 'artifact').length} Daedric artifacts on this page. The game keeps its own running count for the achievement, which it adds to as each quest hands an artifact over.` }),
-    notes.length ? el('ul', { className: 'walker-notes' }, ...notes.map(n => el('li', { textContent: n }))) : null);
+    el('p', { className: 'walker-sub', textContent: `You have collected ${found.length} of the ${r.items.filter(i => i.kind === 'artifact').length} Daedric artifacts on this page. The game keeps its own running count for the achievement, which it adds to as each quest hands an artifact over. Hircine's quest can count twice, so the count can reach 16.` }));
+  if (state.save.header.edition === 'le' && r.ctx.dlc.dawnguard) {
+    box.append(el('p', { className: 'walker-sub', textContent: "On the 2011 edition with Dawnguard, Auriel's Bow counts and the Masque of Clavicus Vile doesn't." }));
+  }
 }
 
 function renderChips() {
@@ -243,14 +257,11 @@ function title(i) {
 function where(i) {
   const bits = [];
   if (i.kind === 'shout' && i.translation) bits.push(`“${i.translation}”, word ${i.wordIndex} of 3`);
-  if (i.kind === 'artifact') bits.push(`${i.prince} · ${i.source}`);
+  if (i.kind === 'artifact') bits.push(i.prince);
   if (i.holder) bits.push(`Carried by ${i.holder}`);
   if (i.area && !['stone', 'kagrumez'].includes(i.kind) && i.kind !== 'artifact') bits.push(i.area);
-  if (i.realm) bits.push('Separate realm');
-  else if (i.near) {
-    const rel = i.near.metres < 25 ? `at ${i.near.name}` : `${i.near.metres} m ${i.near.dir} of ${i.near.name}`;
-    bits.push(i.viaDoor ? `Entrance ${rel}` : rel[0].toUpperCase() + rel.slice(1));
-  } else if (i.map && !i.area) bits.push(state.data.worlds[i.map.world].name);
+  if (!i.area && !i.near && i.map) bits.push(state.data.worlds[i.map.world].name);
+  else if (!i.area && i.near && !['stone', 'kagrumez'].includes(i.kind)) bits.push(`Near ${i.near.name}`);
   return bits.join(' · ');
 }
 
@@ -283,11 +294,12 @@ function listItem(i) {
       dlcIcon(i.dlc),
       BADGES[s] ? el('span', { className: `badge ${BADGES[s][0]}`, textContent: BADGES[s][1] }) : null,
       el('span', { className: 'item-id', textContent: i.id, title: KINDS[i.kind].one })),
-    el('div', { className: 'item-where', textContent: where(i) }),
+    where(i) ? el('div', { className: 'item-where', textContent: where(i) }) : null,
     s === 'failed' && i.fail?.reason ? el('div', { className: 'item-note lost-note', textContent: i.fail.reason }) : null,
-    i.realmNote && s !== 'failed' ? el('div', { className: 'item-note realm-note', textContent: i.realmNote }) : null,
     state.result.extra.get(i.id) ? el('div', { className: 'item-note', textContent: state.result.extra.get(i.id) }) : null,
     i.note ? el('div', { className: 'item-note', textContent: i.note }) : null,
+    i.missable && s !== 'failed' ? el('div', { className: 'item-note missable-note', textContent: i.missable }) : null,
+    i.available ? el('div', { className: 'item-note available-note', textContent: i.available }) : null,
     state.selected.has(i.id) ? localMap(i) : null);
   li.addEventListener('click', () => { select([i]); focusItem(i); });
   return li;
@@ -390,7 +402,7 @@ pins.addEventListener('pointerover', e => {
   const pin = e.target.closest('.pin');
   if (!pin) return;
   const realm = pin._items[0].map.realm;
-  tip.replaceChildren(...(realm ? [el('div', { className: 'tip-head', textContent: `${realm} — separate realm` })] : []), ...pin._items.map(tipLine));
+  tip.replaceChildren(...(realm ? [el('div', { className: 'tip-head', textContent: realm })] : []), ...pin._items.map(tipLine));
   tip.hidden = false;
   placeTip(pin);
 });

@@ -1,0 +1,214 @@
+{
+  "DM03": {
+    "missable": "Only reachable during the main quest The World-Eater's Eyrie."
+  },
+  "DC03": {
+    "missable": "Only reachable during the main quest The World-Eater's Eyrie."
+  },
+  "WP11": {
+    "missable": "Only reachable during the main quest The World-Eater's Eyrie."
+  },
+  "WP55": {
+    "note": "Through a Black Book."
+  },
+  "WP56": {
+    "note": "Taught by the Greybeards.",
+    "available": "Becomes available during The Way of the Voice."
+  },
+  "WP57": {
+    "note": "Taught by the Greybeards.",
+    "available": "Becomes available during The Horn of Jurgen Windcaller."
+  },
+  "WP58": {
+    "note": "Paarthurnax teaches whichever word of it you do not know yet.",
+    "available": "Becomes available during The Throat of the World."
+  },
+  "WP59": {
+    "note": "The Greybeards teach whichever word of it you do not know yet.",
+    "available": "Becomes available during The Way of the Voice."
+  },
+  "WP60": {
+    "note": "Taught by the Greybeards.",
+    "available": "Becomes available during The Throat of the World."
+  },
+  "WP61": {
+    "note": "Taught by the Greybeards.",
+    "available": "Becomes available during The Throat of the World."
+  },
+  "WP62": {
+    "note": "Taught by the Greybeards.",
+    "available": "Becomes available during The Throat of the World."
+  },
+  "WP63": {
+    "note": "At the Time-Wound.",
+    "available": "Becomes available during Alduin's Bane."
+  },
+  "WP64": {
+    "note": "At the Time-Wound.",
+    "available": "Becomes available during Alduin's Bane."
+  },
+  "WP65": {
+    "note": "At the Time-Wound.",
+    "available": "Becomes available during Alduin's Bane."
+  },
+  "WP66": {
+    "note": "At High Hrothgar or Sky Haven Temple.",
+    "available": "Becomes available during The Fallen."
+  },
+  "WP67": {
+    "note": "At High Hrothgar or Sky Haven Temple.",
+    "available": "Becomes available during The Fallen."
+  },
+  "WP68": {
+    "note": "At High Hrothgar or Sky Haven Temple.",
+    "available": "Becomes available during The Fallen."
+  },
+  "WP69": {
+    "note": "In Sovngarde.",
+    "available": "Becomes available during Dragonslayer."
+  },
+  "WP70": {
+    "note": "In Sovngarde.",
+    "available": "Becomes available during Dragonslayer."
+  },
+  "WP71": {
+    "note": "In Sovngarde.",
+    "available": "Becomes available during Dragonslayer."
+  },
+  "WP74": {
+    "note": "Taught by Durnehviir, one word each time you summon him.",
+    "available": "Becomes available after Beyond Death."
+  },
+  "WP75": {
+    "note": "Taught by Durnehviir, one word each time you summon him.",
+    "available": "Becomes available after Beyond Death."
+  },
+  "WP76": {
+    "note": "Taught by Durnehviir, one word each time you summon him.",
+    "available": "Becomes available after Beyond Death."
+  },
+  "WP77": {
+    "note": "Durnehviir teaches all three words when you leave the Soul Cairn.",
+    "available": "Becomes available after Beyond Death."
+  },
+  "WP78": {
+    "note": "Durnehviir teaches all three words when you leave the Soul Cairn.",
+    "available": "Becomes available after Beyond Death."
+  },
+  "WP79": {
+    "note": "Durnehviir teaches all three words when you leave the Soul Cairn.",
+    "available": "Becomes available after Beyond Death."
+  },
+  "WP80": {
+    "note": "Taught by Hermaeus Mora.",
+    "available": "Becomes available during The Gardener of Men."
+  },
+  "WP81": {
+    "note": "Taught by Hermaeus Mora.",
+    "available": "Becomes available during The Gardener of Men."
+  },
+  "TG01": {
+    "note": "In Aringoth's room.",
+    "missable": "Only available during Loud and Clear."
+  },
+  "TG02": {
+    "note": "Behind an expert lock upstairs.",
+    "missable": "Only available during Dampened Spirits."
+  },
+  "TG03": {
+    "note": "In the dockmaster's office.",
+    "missable": "Only available during Scoundrel's Folly."
+  },
+  "TG04": {
+    "note": "On a trapped pedestal.",
+    "missable": "Only available during Speaking With Silence."
+  },
+  "TG05": {
+    "note": "Under Understone Keep.",
+    "missable": "Only available during Hard Answers."
+  },
+  "TG06": {
+    "note": "On a table.",
+    "missable": "Only available during The Pursuit."
+  },
+  "TG07": {
+    "note": null,
+    "missable": "Only available during Blindsighted."
+  },
+  "TG08": {
+    "note": null,
+    "available": "Only available after 5 jobs for Vex and Delvin."
+  },
+  "TG09": {
+    "note": null,
+    "available": "Only available after 15 jobs for Vex and Delvin."
+  },
+  "TG10": {
+    "note": null,
+    "available": "Only available after 25 jobs for Vex and Delvin."
+  },
+  "TG11": {
+    "note": null,
+    "available": "Only available after 35 jobs for Vex and Delvin."
+  },
+  "TG12": {
+    "note": null,
+    "available": "Only available after 45 jobs for Vex and Delvin."
+  },
+  "TG13": {
+    "note": null,
+    "available": "Only available after 55 jobs for Vex and Delvin."
+  },
+  "TG14": {
+    "note": null,
+    "available": "Only available after bringing Vex all 24 Stones of Barenziah."
+  },
+  "DA01": {
+    "available": "Becomes available during The Black Star."
+  },
+  "DA02": {
+    "available": "Becomes available during Boethiah's Calling."
+  },
+  "DA04": {
+    "available": "Becomes available during Discerning the Transmundane."
+  },
+  "DA06": {
+    "available": "Becomes available during Ill Met By Moonlight."
+  },
+  "DA07": {
+    "available": "Becomes available during The Cursed Tribe."
+  },
+  "DA09": {
+    "available": "Becomes available during The Whispering Door."
+  },
+  "DA10": {
+    "available": "Becomes available during The Break of Dawn."
+  },
+  "DA11": {
+    "available": "Becomes available during The House of Horrors."
+  },
+  "DA13": {
+    "available": "Becomes available during The Only Cure."
+  },
+  "DA14": {
+    "available": "Becomes available during A Night To Remember."
+  },
+  "DA15": {
+    "available": "Becomes available during The Mind of Madness."
+  },
+  "DA03": {
+    "missable": "Depending on your choices in A Daedra's Best Friend, this may not be awarded to you."
+  },
+  "DA05": {
+    "missable": "Depending on your choices in Ill Met By Moonlight, this may not be awarded to you."
+  },
+  "DA08": {
+    "missable": "Depending on your choices in Pieces of the Past, this may not be awarded to you."
+  },
+  "DA12": {
+    "missable": "Depending on your choices in The Taste of Death, this may not be awarded to you."
+  },
+  "DA16": {
+    "missable": "Depending on your choices in Waking Nightmare, this may not be awarded to you."
+  }
+}

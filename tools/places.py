@@ -13,9 +13,9 @@ TABS = {0x0000003C: 'skyrim', 0x02000BB5: 'vale', 0x02001408: 'soulcairn', 0x040
 # Realms with no load door out and no place on any map: pinned at the named marker on a tab, and flagged.
 REALMS = {
     'DLC2ApocryphaWorld': dict(marker='Temple of Miraak', name='Apocrypha',
-                               note='Inside Apocrypha, reached by reading a Black Book.'),
+                               note=None),
     'Sovngarde': dict(marker='Skuldafn Temple', name='Sovngarde',
-                      note='Sovngarde, only reachable during the main quest.'),
+                      note='Only reachable during the main quest.'),
 }
 # Interiors entered by script rather than a load door, pinned at a map marker.
 MARKER_PINS = {'LabyrinthianPriestSanctuary': 'Labyrinthian'}
@@ -24,7 +24,7 @@ DOOR_ONLY = {'DLC01Boneyard'}
 # Places a player can only visit once; anything left there is lost when the gating quest completes.
 ONE_TIME = {
     'SkuldafnWorld': dict(name='Skuldafn', quest=0x00046EF0,
-                          note="Skuldafn, only reachable during the main quest The World-Eater's Eyrie."),
+                          note="Only reachable during the main quest The World-Eater's Eyrie."),
 }
 
 
@@ -115,12 +115,12 @@ class Places:
         if wedid in REALMS:
             realm = REALMS[wedid]
             tab, x, y = self.marker(realm['marker'])
-            out.update(realm=realm['name'], realmNote=realm['note'], area=out.get('area') or realm['name'])
+            out.update(realm=realm['name'], missable=realm['note'], area=out.get('area') or realm['name'])
             out['map'] = dict(world=tab, x=round(x), y=round(y), realm=realm['name'])
             return out
         once = ONE_TIME.get(wedid) or self._one_time_interior(cell)
         if once:
-            out.update(oneTime=once['name'], realmNote=once['note'], lostAfter=once['quest'])
+            out.update(oneTime=once['name'], missable=once['note'], lostAfter=once['quest'])
         direct = self.to_tab(wrld, pos[0], pos[1]) if wrld is not None else None
         if direct:
             tab, x, y = direct

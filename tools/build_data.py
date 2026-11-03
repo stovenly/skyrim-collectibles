@@ -406,6 +406,13 @@ for it in items + walls:
     if it.get('map'):
         project(it['map'])
 
+item_text = json.loads((ROOT / 'tools' / 'item_text.json').read_text(encoding='utf-8'))
+assert set(item_text) <= {i['id'] for i in items}
+for it in items:
+    it.update(item_text.get(it['id'], {}))
+    if it.get('note') is None:
+        it.pop('note', None)
+
 counters = {k: F(E(v)) for k, v in dict(stone='TGCrownGemsFound', blackbook='DLC2BlackBookCount', kagrumez='DLC2KagrumezGemPlacedCount').items()}
 worlds = {k: {kk: vv for kk, vv in v.items() if kk != 'proj'} for k, v in MAPS.items()}
 OUT.mkdir(parents=True, exist_ok=True)
