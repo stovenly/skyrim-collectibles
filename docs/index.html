@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyrim Collectibles Tracker — Masks, Stones, Artifacts, Shouts</title>
+<meta name="description" content="Drop a Skyrim, Skyrim Special Edition or Skyrim VR save on the page and see which Dragon Priest Masks, Stones of Barenziah, Daedric Artifacts, Dragon Claws, Words of Power and other collectibles you still have to find.">
+<link rel="canonical" href="https://stovenly.github.io/skyrim-collectibles/">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Skyrim Collectibles Tracker">
+<meta property="og:title" content="Skyrim Collectibles Tracker">
+<meta property="og:description" content="Drop a Skyrim, Skyrim Special Edition or Skyrim VR save on the page and see which Dragon Priest Masks, Stones of Barenziah, Daedric Artifacts, Dragon Claws, Words of Power and other collectibles you still have to find.">
+<meta property="og:url" content="https://stovenly.github.io/skyrim-collectibles/">
+<meta property="og:image" content="https://stovenly.github.io/skyrim-collectibles/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Skyrim dragon emblem above the title Skyrim Collectibles and the collectible icons">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Skyrim Collectibles Tracker">
+<meta name="twitter:description" content="Drop a Skyrim, Skyrim Special Edition or Skyrim VR save on the page and see which Dragon Priest Masks, Stones of Barenziah, Daedric Artifacts, Dragon Claws, Words of Power and other collectibles you still have to find.">
+<meta name="twitter:image" content="https://stovenly.github.io/skyrim-collectibles/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;1,300&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/app.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Skyrim Collectibles Tracker",
+  "url": "https://stovenly.github.io/skyrim-collectibles/",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Any browser",
+  "browserRequirements": "Requires JavaScript",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Drop a Skyrim, Skyrim Special Edition or Skyrim VR save on the page and see which Dragon Priest Masks, Stones of Barenziah, Daedric Artifacts, Dragon Claws, Words of Power and other collectibles you still have to find.",
+  "screenshot": "https://stovenly.github.io/skyrim-collectibles/img/og.jpg",
+  "about": { "@type": "VideoGame", "name": "The Elder Scrolls V: Skyrim", "publisher": { "@type": "Organization", "name": "Bethesda Softworks" } }
+}
+</script>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <img class="mark" src="img/mark.png" width="96" height="96" alt="" draggable="false">
+    <h1>Skyrim Collectibles Tracker</h1>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="drop" class="drop panel" tabindex="0" role="button" aria-label="Choose a Skyrim save file">
+    <input id="file" type="file" accept=".ess" hidden>
+    <div class="drop-inner">
+      <p class="drop-title">Drop a <code>.ess</code> save here, or <span class="browse"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15.5V3.5"/><path d="M7.5 8 12 3.5 16.5 8"/><path d="M4 14.5v4A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5v-4"/></svg>browse</span></p>
+      <dl class="drop-paths">
+        <dt>Skyrim Special Edition</dt>
+        <dd><code>%USERPROFILE%\Documents\My Games\Skyrim Special Edition\Saves</code> <button type="button" class="copy" data-path="%USERPROFILE%\Documents\My Games\Skyrim Special Edition\Saves">Copy</button></dd>
+        <dt>Skyrim VR</dt>
+        <dd><code>%USERPROFILE%\Documents\My Games\Skyrim VR\Saves</code> <button type="button" class="copy" data-path="%USERPROFILE%\Documents\My Games\Skyrim VR\Saves">Copy</button></dd>
+        <dt>Skyrim (2011)</dt>
+        <dd><code>%USERPROFILE%\Documents\My Games\Skyrim\Saves</code> <button type="button" class="copy" data-path="%USERPROFILE%\Documents\My Games\Skyrim\Saves">Copy</button></dd>
+      </dl>
+      <p class="drop-note">Any edition works, with or without Dawnguard and Dragonborn; the tracker tells you what it read. Mods that move, add or remove collectibles will throw the results off.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about panel">
+    <h2>Find the collectibles you are still missing in Skyrim</h2>
+    <p>Skyrim never tells you which masks, stones or words of power you already have. Tracking down the last few
+      means working through a guide location by location and trying to remember which barrows you have cleared.</p>
+    <p>Load a save here and the page works out what you already have. What is left is shown as a list, with the
+      location of each one, and as pins on maps of Skyrim, the Forgotten Vale, Solstheim and the Soul Cairn.
+      Anything you can no longer get, because a quest closed it off, is marked as lost.</p>
+
+    <h2>What it tracks</h2>
+    <ul class="about-list">
+      <li><a href="dragon-priest-masks/"><b>Dragon Priest Masks</b></a>, ten, and four more with Dragonborn</li>
+      <li><a href="stones-of-barenziah/"><b>24 Stones of Barenziah</b></a></li>
+      <li><a href="daedric-artifacts/"><b>Daedric Artifacts</b></a>, with the game's own Oblivion Walker count</li>
+      <li><a href="dragon-claws/"><b>Dragon Claws</b></a>, ten, and the Amethyst Claw with Dragonborn</li>
+      <li><a href="black-books/"><b>7 Black Books</b></a> (Dragonborn)</li>
+      <li><a href="words-of-power/"><b>Words of Power</b></a>, 60, plus 9 from Dawnguard and 12 from Dragonborn</li>
+      <li><a href="paragons/"><b>5 Paragons</b></a> and <a href="jiubs-opus/"><b>10 pages of Jiub's Opus</b></a> (Dawnguard)</li>
+      <li><a href="kagrumez-resonance-gems/"><b>5 Kagrumez Resonance Gems</b></a> (Dragonborn)</li>
+      <li><a href="insects-in-jars/"><b>5 Insects in Jars</b></a></li>
+      <li><a href="thieves-guild-trophies/"><b>14 Thieves Guild Trophies</b></a></li>
+    </ul>
+
+    <p>It reads saves from Skyrim, Skyrim Special Edition (including the Anniversary Edition) and Skyrim VR. It all
+      happens in your browser. Your save never leaves your machine.</p>
+  </section>
+
+  <p id="error" class="error panel" hidden></p>
+
+  <section id="results" hidden>
+    <div class="save-card panel">
+      <canvas id="shot" width="0" height="0"></canvas>
+      <div class="save-meta">
+        <p class="badges"><span id="edition" class="edition"></span><span id="dlcs"></span></p>
+        <h2 id="pc-name"></h2>
+        <p id="pc-line"></p>
+        <p id="save-line" class="muted"></p>
+      </div>
+      <button type="button" id="reload" class="reload">Load a different save</button>
+    </div>
+    <div id="warnings"></div>
+
+    <div class="tallies" id="tallies"></div>
+    <dialog id="walker" class="walker panel" aria-labelledby="walker-title"></dialog>
+
+    <div class="toolbar">
+      <div class="chips" id="kind-chips" role="group" aria-label="Collectible types"></div>
+      <label class="toggle"><input type="checkbox" id="show-found"> Show collected</label>
+    </div>
+
+    <div class="board">
+      <div class="map-panel">
+        <div class="map-tabs" id="map-tabs" role="tablist" aria-label="Maps"></div>
+        <div class="map" id="map">
+          <div class="stage" id="stage"><img id="map-img" alt="Map" draggable="false"><div class="tiles" id="tiles"></div></div>
+          <div class="pins" id="pins"></div>
+          <div class="map-ctrl">
+            <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" id="zoom-reset" aria-label="Reset view">⤢</button>
+          </div>
+          <div class="tip" id="tip" hidden></div>
+        </div>
+      </div>
+      <div class="list-panel panel">
+        <p class="list-count muted" id="list-count"></p>
+        <ol class="list" id="list"></ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>The Elder Scrolls V: Skyrim © <a href="https://bethesda.net/">Bethesda Softworks</a>. Map renders by <a href="https://en.uesp.net/wiki/Skyrim:Maps">UESP</a>.</p>
+  <p>All copyrights to the game and its content, including the icons and textures used here, belong to ZeniMax Media and Bethesda Softworks. This is a fan project, not affiliated with or endorsed by them.</p>
+</footer>
+
+<div class="corner corner-l" id="settings">
+  <div class="corner-pop panel" id="settings-pop" hidden>
+    <div class="pop-head">
+      <h2>Settings</h2>
+      <button type="button" class="pop-close" aria-label="Close">×</button>
+    </div>
+    <p class="pop-label">Accessibility</p>
+    <button type="button" class="switch" id="dyslexic" role="switch" aria-checked="false"><span>Dyslexia-friendly font</span><i></i></button>
+  </div>
+  <button type="button" class="corner-btn" aria-label="Settings" aria-expanded="false" aria-controls="settings-pop"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button>
+</div>
+
+<div class="corner corner-r" id="info">
+  <div class="corner-pop panel" id="info-pop" hidden>
+    <p class="made"><span>Made by <a href="https://stovenly.com/projects/skyrim-collectibles/" target="_blank" rel="noopener">stovenly</a></span><img src="img/heart.png" alt=""></p>
+    <p><a href="https://github.com/stovenly/skyrim-collectibles/blob/main/CREDITS.md" target="_blank" rel="noopener">Credits</a></p>
+    <p><a href="https://github.com/stovenly/skyrim-collectibles" target="_blank" rel="noopener">Source code</a></p>
+    <p><a href="https://github.com/stovenly/skyrim-collectibles/issues/new" target="_blank" rel="noopener">Report an issue</a></p>
+  </div>
+  <button type="button" class="corner-btn" aria-label="About" aria-expanded="false" aria-controls="info-pop"><span aria-hidden="true">?</span></button>
+</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+{
+ "skyrim": {
+  "name": "Skyrim",
+  "image": "data/skyrim.webp",
+  "width": 2048,
+  "height": 2048,
+  "crop": [
+   0.0039,
+   0.0,
+   0.8706,
+   0.7222
+  ],
+  "tiles": {
+   "path": "map/skyrim",
+   "size": 256,
+   "min": 2,
+   "max": 5
+  },
+  "proj": {
+   "x0": -233472.0,
+   "x1": 290816.0,
+   "y0": -315392.0,
+   "y1": 208896.0
+  }
+ },
+ "vale": {
+  "name": "Forgotten Vale",
+  "image": "data/vale.webp",
+  "width": 2048,
+  "height": 2048,
+  "crop": [
+   0.0195,
+   0.0508,
+   0.855,
+   0.855
+  ],
+  "tiles": {
+   "path": "map/vale",
+   "size": 256,
+   "min": 2,
+   "max": 5
+  },
+  "proj": {
+   "x0": -65536.0,
+   "x1": 65536.0,
+   "y0": -65536.0,
+   "y1": 65536.0
+  }
+ },
+ "soulcairn": {
+  "name": "Soul Cairn",
+  "image": "data/soulcairn.webp",
+  "width": 2048,
+  "height": 2048,
+  "crop": [
+   0.0195,
+   0.0508,
+   0.6675,
+   0.6675
+  ],
+  "tiles": {
+   "path": "map/soulcairn",
+   "size": 256,
+   "min": 2,
+   "max": 5
+  },
+  "proj": {
+   "x0": -45056.0,
+   "x1": 86016.0,
+   "y0": -77824.0,
+   "y1": 53248.0
+  }
+ },
+ "solstheim": {
+  "name": "Solstheim",
+  "image": "data/solstheim.webp",
+  "width": 2048,
+  "height": 2048,
+  "crop": [
+   0.1392,
+   0.0586,
+   0.6821,
+   0.5269
+  ],
+  "tiles": {
+   "path": "map/solstheim",
+   "size": 256,
+   "min": 2,
+   "max": 5
+  },
+  "proj": {
+   "x0": -49152.0,
+   "x1": 212992.0,
+   "y0": -135168.0,
+   "y1": 126976.0
+  }
+ }
+}

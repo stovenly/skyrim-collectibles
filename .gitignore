@@ -1,0 +1,9 @@
+.venv/
+research/
+specs/
+__pycache__/
+node_modules/
+*.ess
+*.skse
+CLAUDE.md
+research/shots/

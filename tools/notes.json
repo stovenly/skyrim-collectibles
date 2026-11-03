@@ -1,0 +1,324 @@
+{
+  "questWords": {
+    "UnrelentingForceShout:2": {
+      "note": "Taught by the Greybeards during The Way of the Voice.",
+      "marker": "High Hrothgar"
+    },
+    "UnrelentingForceShout:3": {
+      "note": "Taught by the Greybeards during The Horn of Jurgen Windcaller.",
+      "marker": "High Hrothgar"
+    },
+    "WhirlwindSprintShout:2": {
+      "note": "The Greybeards teach whichever word of it you do not know yet, during The Way of the Voice.",
+      "marker": "High Hrothgar",
+      "stage": [
+        "MQ105",
+        110
+      ]
+    },
+    "FireBreathShout:3": {
+      "note": "Paarthurnax teaches whichever word of it you do not know yet, during The Throat of the World.",
+      "marker": "Throat of the World",
+      "stage": [
+        "MQ204",
+        125
+      ]
+    },
+    "ClearSkiesShout:1": {
+      "note": "Taught by the Greybeards during The Throat of the World.",
+      "marker": "High Hrothgar"
+    },
+    "ClearSkiesShout:2": {
+      "note": "Taught by the Greybeards during The Throat of the World.",
+      "marker": "High Hrothgar"
+    },
+    "ClearSkiesShout:3": {
+      "note": "Taught by the Greybeards during The Throat of the World.",
+      "marker": "High Hrothgar"
+    },
+    "DragonrendShout:1": {
+      "note": "Learned at the Time-Wound during Alduin's Bane.",
+      "marker": "Throat of the World"
+    },
+    "DragonrendShout:2": {
+      "note": "Learned at the Time-Wound during Alduin's Bane.",
+      "marker": "Throat of the World"
+    },
+    "DragonrendShout:3": {
+      "note": "Learned at the Time-Wound during Alduin's Bane.",
+      "marker": "Throat of the World"
+    },
+    "CallDragonShout:1": {
+      "note": "Learned during The Fallen, at High Hrothgar or Sky Haven Temple.",
+      "marker": "High Hrothgar"
+    },
+    "CallDragonShout:2": {
+      "note": "Learned during The Fallen, at High Hrothgar or Sky Haven Temple.",
+      "marker": "High Hrothgar"
+    },
+    "CallDragonShout:3": {
+      "note": "Learned during The Fallen, at High Hrothgar or Sky Haven Temple.",
+      "marker": "High Hrothgar"
+    },
+    "CallofValorShout:1": {
+      "note": "Learned in Sovngarde during Dragonslayer, the last main quest."
+    },
+    "CallofValorShout:2": {
+      "note": "Learned in Sovngarde during Dragonslayer, the last main quest."
+    },
+    "CallofValorShout:3": {
+      "note": "Learned in Sovngarde during Dragonslayer, the last main quest."
+    },
+    "ThrowVoiceShout:2": {
+      "note": "Learned with the first word at the Shearpoint word wall.",
+      "marker": "Shearpoint"
+    },
+    "ThrowVoiceShout:3": {
+      "note": "Learned with the first word at the Shearpoint word wall.",
+      "marker": "Shearpoint"
+    },
+    "DLC1SoulTearShout:1": {
+      "note": "Durnehviir teaches one word each time you summon him, after Beyond Death.",
+      "npc": "DLC1Durnehviir"
+    },
+    "DLC1SoulTearShout:2": {
+      "note": "Durnehviir teaches one word each time you summon him, after Beyond Death.",
+      "npc": "DLC1Durnehviir"
+    },
+    "DLC1SoulTearShout:3": {
+      "note": "Durnehviir teaches one word each time you summon him, after Beyond Death.",
+      "npc": "DLC1Durnehviir"
+    },
+    "DLC1SummonDragonShout:1": {
+      "note": "Durnehviir teaches all three words when you leave the Soul Cairn after Beyond Death.",
+      "npc": "DLC1Durnehviir"
+    },
+    "DLC1SummonDragonShout:2": {
+      "note": "Durnehviir teaches all three words when you leave the Soul Cairn after Beyond Death.",
+      "npc": "DLC1Durnehviir"
+    },
+    "DLC1SummonDragonShout:3": {
+      "note": "Durnehviir teaches all three words when you leave the Soul Cairn after Beyond Death.",
+      "npc": "DLC1Durnehviir"
+    },
+    "DLC2BendWillShout:2": {
+      "note": "Taught by Hermaeus Mora during The Gardener of Men.",
+      "marker": "Tel Mithryn"
+    },
+    "DLC2BendWillShout:3": {
+      "note": "Taught by Hermaeus Mora during The Gardener of Men.",
+      "marker": "Tel Mithryn"
+    }
+  },
+  "trophies": {
+    "Queen Bee Statue": "Taken from Aringoth's room in Goldenglow Estate during Loud and Clear.",
+    "Honningbrew Decanter": "Behind an expert lock upstairs in Honningbrew Meadery, during Dampened Spirits.",
+    "East Empire Shipping Map": "In the dockmaster's office of the East Empire Company Warehouse, during Scoundrel's Folly.",
+    "Model Ship": "On a trapped pedestal in Snow Veil Catacombs, during Speaking With Silence.",
+    "Dwemer Puzzle Cube": "In Calcelmo's Laboratory under Understone Keep, during Hard Answers.",
+    "Bust of the Gray Fox": "On a table in Riftweald Manor, during The Pursuit.",
+    "Left Eye of the Falmer": "Taken from Mercer Frey's body in Irkngthand, during Blindsighted."
+  },
+  "artifacts": [
+    {
+      "name": "Azura's Star",
+      "prince": "Azura",
+      "quest": "DA01",
+      "items": [
+        "DA01SoulGemAzurasStar",
+        "DA01SoulGemBlackStar"
+      ],
+      "stages": [
+        100,
+        110
+      ],
+      "marker": "Shrine of Azura",
+      "note": "Either Azura's Star or the Black Star, depending on whose side you take."
+    },
+    {
+      "name": "Ebony Mail",
+      "prince": "Boethiah",
+      "quest": "DA02",
+      "items": [
+        "DA02Armor"
+      ],
+      "stages": [
+        40
+      ],
+      "marker": "Sacellum of Boethiah"
+    },
+    {
+      "name": "Masque of Clavicus Vile",
+      "prince": "Clavicus Vile",
+      "quest": "DA03",
+      "items": [
+        "ClavicusVileMask"
+      ],
+      "stages": [
+        200
+      ],
+      "marker": "Haemar's Shame",
+      "lost": "You took the Rueful Axe, so Clavicus Vile kept the Masque."
+    },
+    {
+      "name": "Oghma Infinium",
+      "prince": "Hermaeus Mora",
+      "quest": "DA04",
+      "items": [
+        "DA04OghmaInfinium"
+      ],
+      "stages": [
+        60
+      ],
+      "marker": "Septimus Signus's Outpost"
+    },
+    {
+      "name": "Savior's Hide",
+      "prince": "Hircine",
+      "quest": "DA05",
+      "items": [
+        "DA05SaviorsHide"
+      ],
+      "stages": [
+        100
+      ],
+      "marker": "Bloated Man's Grotto",
+      "lost": "You spared Sinding, so Hircine gave no hide."
+    },
+    {
+      "name": "Ring of Hircine",
+      "prince": "Hircine",
+      "quest": "DA05",
+      "items": [
+        "DA05HircinesRing"
+      ],
+      "marker": "Bloated Man's Grotto",
+      "note": "Hircine's spirit lifts the ring's curse. Doing this as well as taking Savior's Hide counts twice toward Oblivion Walker."
+    },
+    {
+      "name": "Volendrung",
+      "prince": "Malacath",
+      "quest": "DA06",
+      "items": [
+        "DA06Volendrung"
+      ],
+      "stages": [
+        200
+      ],
+      "marker": "Largashbur"
+    },
+    {
+      "name": "Mehrunes' Razor",
+      "prince": "Mehrunes Dagon",
+      "quest": "DA07",
+      "items": [
+        "DA07MehrunesRazor"
+      ],
+      "stages": [
+        100
+      ],
+      "marker": "Shrine of Mehrunes Dagon",
+      "lost": "You spared Silus Vesuius, so Mehrunes Dagon kept the Razor."
+    },
+    {
+      "name": "Ebony Blade",
+      "prince": "Mephala",
+      "quest": "DA08",
+      "items": [
+        "DA08EbonyBlade",
+        "DA08RealEbonyBlade"
+      ],
+      "stages": [
+        60
+      ],
+      "marker": "Dragonsreach"
+    },
+    {
+      "name": "Dawnbreaker",
+      "prince": "Meridia",
+      "quest": "DA09",
+      "items": [
+        "DA09Dawnbreaker"
+      ],
+      "stages": [
+        450
+      ],
+      "marker": "Statue to Meridia"
+    },
+    {
+      "name": "Mace of Molag Bal",
+      "prince": "Molag Bal",
+      "quest": "DA10",
+      "items": [
+        "DA10MaceofMolagBal"
+      ],
+      "stages": [
+        140
+      ],
+      "marker": "Markarth"
+    },
+    {
+      "name": "Ring of Namira",
+      "prince": "Namira",
+      "quest": "DA11",
+      "items": [
+        "DA11RingofNamira"
+      ],
+      "stages": [
+        100
+      ],
+      "marker": "Reachcliff Cave",
+      "lost": "You turned on Eola, so Namira gave no ring."
+    },
+    {
+      "name": "Spellbreaker",
+      "prince": "Peryite",
+      "quest": "DA13",
+      "items": [
+        "DA13Spellbreaker"
+      ],
+      "stages": [
+        81
+      ],
+      "marker": "Bthardamz"
+    },
+    {
+      "name": "Sanguine Rose",
+      "prince": "Sanguine",
+      "quest": "DA14",
+      "items": [
+        "DA14SanguineRose"
+      ],
+      "stages": [
+        200
+      ],
+      "cell": "DA14Interior"
+    },
+    {
+      "name": "Wabbajack",
+      "prince": "Sheogorath",
+      "quest": "DA15",
+      "items": [
+        "DA15Wabbajack"
+      ],
+      "stages": [
+        100
+      ],
+      "marker": "Blue Palace"
+    },
+    {
+      "name": "Skull of Corruption",
+      "prince": "Vaermina",
+      "quest": "DA16",
+      "items": [
+        "DA16SkullofCorruption"
+      ],
+      "stages": [
+        200
+      ],
+      "marker": "Nightcaller Temple",
+      "lost": "You let Erandur destroy the Skull."
+    }
+  ],
+  "respawns": "This jar's spot respawns when the area resets, so it only counts as collected while you still have it or before the reset."
+}
