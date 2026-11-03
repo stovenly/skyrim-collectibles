@@ -132,6 +132,7 @@ function show(save, bytes, result) {
   state.save = save;
   const h = save.header;
   $('edition').textContent = EDITION_NAMES[h.edition];
+  $('map-notice').hidden = h.edition !== 'le';
   $('dlcs').replaceChildren(...Object.keys(DLC_NAMES).filter(d => result.ctx.dlc[d])
     .map(d => el('span', { className: 'dlc-badge' }, dlcIcon(d), d === 'saints' && result.ctx.anniversary ? 'Anniversary Edition' : DLC_NAMES[d])));
   $('pc-name').textContent = h.name;
@@ -286,7 +287,8 @@ function listItem(i) {
     s === 'failed' && i.fail?.reason ? el('div', { className: 'item-note lost-note', textContent: i.fail.reason }) : null,
     i.realmNote && s !== 'failed' ? el('div', { className: 'item-note realm-note', textContent: i.realmNote }) : null,
     state.result.extra.get(i.id) ? el('div', { className: 'item-note', textContent: state.result.extra.get(i.id) }) : null,
-    i.note ? el('div', { className: 'item-note', textContent: i.note }) : null);
+    i.note ? el('div', { className: 'item-note', textContent: i.note }) : null,
+    state.selected.has(i.id) ? localMap(i) : null);
   li.addEventListener('click', () => { select([i]); focusItem(i); });
   return li;
 }
@@ -410,10 +412,18 @@ pins.addEventListener('click', e => {
   select(pin._items, true);
 });
 
+function localMap(i) {
+  const box = el('div', { className: 'item-map' });
+  box.append(el('img', { src: asset(`img/local/${i.id}.webp`), alt: `Local map around ${title(i)}`, onerror: () => box.remove() }));
+  return box;
+}
+
 function select(items, scroll = false) {
   state.selected = new Set(items.map(i => i.id));
   for (const n of $('list').querySelectorAll('.item.active')) n.classList.remove('active');
+  for (const n of $('list').querySelectorAll('.item-map')) n.remove();
   const nodes = items.map(i => document.getElementById(`item-${i.id}`)).filter(Boolean);
+  for (const i of items) document.getElementById(`item-${i.id}`)?.append(localMap(i));
   for (const n of nodes) {
     n.classList.add('active');
     n.classList.remove('flash');

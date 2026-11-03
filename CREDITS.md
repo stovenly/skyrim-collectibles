@@ -9,6 +9,7 @@ Bethesda Softworks. All rights to the game and its content belong to them, inclu
   `HearthFires.esm` and `Dragonborn.esm` in Skyrim, Skyrim Special Edition and Skyrim VR
 - the dragon emblem in the masthead and the collectible icons, rendered from the game's own meshes and textures
 - the night sky behind the page, from the skills menu's textures
+- the local map images in `docs/img/local`, rendered from the Special Edition's world data, meshes and textures
 
 This is a fan project and is not affiliated with or endorsed by Bethesda Softworks or ZeniMax Media.
 
@@ -30,6 +31,18 @@ From the [UESP](https://en.uesp.net/), by its contributors, under
 - [The Litany of Larceny](https://en.uesp.net/wiki/Skyrim:The_Litany_of_Larceny), [Lost Legacy](https://en.uesp.net/wiki/Skyrim:Lost_Legacy),
   [The Kagrumez Gauntlet](https://en.uesp.net/wiki/Skyrim:The_Kagrumez_Gauntlet) and
   [Miscellaneous Items](https://en.uesp.net/wiki/Skyrim:Miscellaneous_Items), checked against the game data
+
+## Local maps
+
+`tools/localmap.py` reproduces the look of the local maps drawn by the game's engine, © Bethesda Softworks, from the
+game's own shaders and data. The images come from the Special Edition and may not resemble the 2011 edition's maps.
+Deliberate differences from the game:
+
+- everything is drawn as explored, with no fog of war
+- secret room panels marked Localmap_Hide_Secret are hidden, so hidden rooms show
+- land is lit at noon in the climate's most likely weather, where the game uses the current time and weather
+- no point lights, and water is drawn as flat black
+- the backdrop is a flat colour, not the menu behind the map
 
 ## Typefaces
 
