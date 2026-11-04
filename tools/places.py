@@ -15,7 +15,7 @@ REALMS = {
     'DLC2ApocryphaWorld': dict(marker='Temple of Miraak', name='Apocrypha',
                                note=None),
     'Sovngarde': dict(marker='Skuldafn Temple', name='Sovngarde',
-                      note='Only reachable during the main quest.'),
+                      note='Only obtainable during the main quest.'),
 }
 # Interiors entered by script rather than a load door, pinned at a map marker.
 MARKER_PINS = {'LabyrinthianPriestSanctuary': 'Labyrinthian'}
@@ -24,7 +24,7 @@ DOOR_ONLY = {'DLC01Boneyard'}
 # Places a player can only visit once; anything left there is lost when the gating quest completes.
 ONE_TIME = {
     'SkuldafnWorld': dict(name='Skuldafn', quest=0x00046EF0,
-                          note="Only reachable during the main quest The World-Eater's Eyrie."),
+                          note="Only obtainable during the main quest The World-Eater's Eyrie."),
 }
 
 
