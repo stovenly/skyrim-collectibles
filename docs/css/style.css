@@ -50,7 +50,7 @@ code { font: .78em ui-monospace, "Cascadia Mono", Consolas, monospace; color: va
 .wrap { max-width: 1600px; margin: 0 auto; padding-inline: 20px; }
 .muted { color: var(--ink-2); }
 
-/* Skyrim's menus: black glass, no side walls, hairline rules top and bottom ending in small diamonds. */
+/* Skyrim's menus: black glass, no side walls, hairline rules top and bottom ending in corner ticks. */
 .panel {
   position: relative;
   background: var(--panel);
@@ -63,14 +63,15 @@ code { font: .78em ui-monospace, "Cascadia Mono", Consolas, monospace; color: va
 .panel::before, .panel::after {
   content: "";
   position: absolute;
-  left: -4px; right: -4px; height: 7px;
+  left: -4px; right: -4px; height: 4px;
   pointer-events: none;
+  --tick-l: 45deg; --tick-r: -45deg;
   background:
-    linear-gradient(45deg, transparent 2.5px, var(--rule) 2.5px 3.5px, transparent 3.5px) left center / 7px 7px no-repeat,
-    linear-gradient(45deg, transparent 2.5px, var(--rule) 2.5px 3.5px, transparent 3.5px) right center / 7px 7px no-repeat;
+    linear-gradient(var(--tick-l), transparent calc(50% - .5px), var(--rule) 0 calc(50% + .5px), transparent 0) left / 4px 4px no-repeat,
+    linear-gradient(var(--tick-r), transparent calc(50% - .5px), var(--rule) 0 calc(50% + .5px), transparent 0) right / 4px 4px no-repeat;
 }
 .panel::before { top: -4px; }
-.panel::after { bottom: -4px; }
+.panel::after { bottom: -4px; --tick-l: -45deg; --tick-r: 45deg; }
 
 .masthead { padding-block: 34px 10px; text-align: center; }
 .mark { display: block; width: 96px; height: 96px; margin: 0 auto 8px; filter: drop-shadow(0 0 16px rgba(255, 255, 255, .18)) drop-shadow(0 3px 6px #000); }
